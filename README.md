@@ -83,10 +83,37 @@ docker run -p 8000:8000 kamalesh0081/en-ta-translator:v3
 
 ## Local Setup (Without Docker)
 
-```
+Since the application uses separate frontend and backend services, you need to run them in **two terminals**.
+
+### 1. Install dependencies
+
+```bash
 pip install -r requirements.txt
-python app.py
 ```
+
+---
+
+### 2. Start Backend (FastAPI)
+
+```bash
+uvicorn backend.app:app --reload
+```
+
+---
+
+### 3. Start Frontend (Gradio)
+
+```bash
+python frontend/app_gradio.py
+```
+
+---
+
+### Access
+
+* FastAPI: http://localhost:8000
+* Gradio UI: http://localhost:7860
+
 
 ---
 
